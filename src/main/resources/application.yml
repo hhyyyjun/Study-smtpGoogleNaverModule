@@ -1,0 +1,33 @@
+server:
+  port: 8380
+
+spring:
+  mail:
+    #네이버로 보내는 경우
+#    host: smtp.naver.com
+#    port: 465
+#    username: gidwns617
+#    password: 65BB4KPHR4QR
+#    protocol: smtps
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+#          ssl:
+#            enable: true
+#            trust: smtp.naver.com
+
+    #구글로 보내는 경우
+    host: smtp.gmail.com
+    port: 587
+    username: gidwns617@gmail.com
+    password: ixpalzctwwoneucc
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          starttls:
+            enable: true
