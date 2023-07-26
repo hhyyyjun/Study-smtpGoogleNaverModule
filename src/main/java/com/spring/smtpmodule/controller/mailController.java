@@ -5,6 +5,7 @@ import com.spring.smtpmodule.service.MailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,10 +32,15 @@ public class mailController {
 
     private final MailService mailService;
 
+    @GetMapping("/")
+    public String main(){
+        return "view/mailsend";
+    }
+
     @PostMapping("/sendMail")
     @ResponseBody
     public ResponseEntity<?> sendMail(@RequestBody MailDto request) throws MessagingException, IOException {
-        mailService.sendEmail(request.getMailType(), request.getUserEmail(), request.getUserName(), request.getCurrentDate());
+        mailService.sendEmail(request.getMailType(), request.getUserEmail(), request.getUserName(), request.getSelectDate());
         return ResponseEntity.ok(200);
     }
 }

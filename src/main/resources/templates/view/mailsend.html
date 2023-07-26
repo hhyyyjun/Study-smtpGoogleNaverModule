@@ -1,24 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>메일 전송하는 페이지</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/default_layout">
+
+<!-- 현재 화면에서만 사용하는 css -->
+<th:block layout:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/mail.css}">
+</th:block>
+
+<!-- 현재 화면에서만 사용하는 js -->
+<!--<th:block layout:fragment="script">-->
+<!--    <script src="/js/mail.js"></script>-->
+<!--</th:block>-->
+
 <body>
-    <div style="width:500px; border: 1px solid red">
-        <div style="width: 100%; display: flex">
-            <select>
-                <option value="reservation">예약</option>
-                <option value="reservationChange">변경</option>
-                <option value="reservationDelete">삭제</option>
-            </select>
-
-
+    <th:block layout:fragment="content">
+        <div class="emailWrap">
+            <div class="emailSetting">
+                <div class="selectOptions">
+                    <select>
+                        <option value="reservation">예약</option>
+                        <option value="reservationChange">변경</option>
+                        <option value="reservationDelete">삭제</option>
+                    </select>
+                    <input class="datepicker">
+                </div>
+                <div class="selectUser">
+                    <input class="userEmail" type="text" placeholder="추가할 사람의 이메일을 입력하세요.">
+                    <button class="addBtn">추가</button>
+                </div>
+            </div>
+            <div class="selectUserList">
+                <ul class="selectedUserList"></ul>
+            </div>
+            <div>
+                <textarea class="meetContent" placeholder="회의 내용을 입력하세요."></textarea>
+            </div>
+            <button>예약하기</button>
         </div>
-        <div>
-            <input type="text" placeholder="회의 내용을 입력하세요.">
-        </div>
-    </div>
+    </th:block>
 </body>
 </html>
 

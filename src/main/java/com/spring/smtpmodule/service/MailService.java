@@ -31,6 +31,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MailService {
 
+    //thymeleaf 템플릿을 이메일로 보내는 경우
+    
     private final JavaMailSender mailSender;
 //    private static final String FROM_ADDRESS = "gidwns617@naver.com"; //smtp 설정한 본인의 이메일만 가능하다. 네이버
     private static final String FROM_ADDRESS = "gidwns617@gmail.com";  //구글
@@ -41,7 +43,7 @@ public class MailService {
     //1. 예약 내역 작성 시
     //2. 회의실 예약 변경 시
     //3. 회의실 예약 삭제 시
-    //필요한 것 : 이메일 타입, 사원이메일, 사원이름, 예약시간
+    //파라미터 : 이메일 타입, 사원이메일, 사원이름, 예약날짜, 예약시간, 회의내용, 회의실종류 및 더 추가 필요
 
     
     @Transactional

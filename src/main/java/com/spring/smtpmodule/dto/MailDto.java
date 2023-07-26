@@ -24,6 +24,6 @@ public class MailDto {
     private String mailType; //보내는 메일 종류
     private List<String> userEmail; //유저 메일
     private List<String> userName; //유저 이름
-    private LocalDateTime currentDate; //현재 날짜
+    private LocalDateTime selectDate; //예약 선택 날짜
 
 }

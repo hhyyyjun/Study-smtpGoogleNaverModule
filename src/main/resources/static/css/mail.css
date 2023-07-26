@@ -1,0 +1,40 @@
+.emailWrap{
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.emailSetting{
+    width: 100%;
+}
+
+.selectOptions{
+    width: 10%;
+    display: flex;
+}
+
+.selectUser{
+    width: 100%;
+    display: flex;
+}
+
+.userEmail{
+    width: 90%;
+}
+
+.addBtn{
+    width: 10%;
+}
+
+.meetContent{
+    min-width: 99%;
+    max-width: 99%;
+    min-height: 500px;
+}
+
+.selectUserList{
+    width: 100%;
+    min-height: 20px;
+    flex: flex-wrap;
+    border-block: 1px solid black;
+}
