@@ -1,6 +1,7 @@
 package com.spring.smtpmodule.controller;
 
 import com.spring.smtpmodule.dto.MailDto;
+import com.spring.smtpmodule.dto.MailDtoJsp;
 import com.spring.smtpmodule.service.MailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +41,13 @@ public class mailController {
     @PostMapping("/sendMail")
     @ResponseBody
     public ResponseEntity<?> sendMail(@RequestBody MailDto request) throws MessagingException, IOException {
-        mailService.sendEmail(request.getMailType(), request.getUserEmail(), request.getUserName(), request.getSelectDate());
+        mailService.sendEmailThymeleaf(request.getMailType(), request.getUserEmail(), request.getUserName(), request.getSelectDate());
+        return ResponseEntity.ok(200);
+    }
+
+    @PostMapping("/sendEmailToPeople")
+    public ResponseEntity<?> mailToPeople(@RequestBody MailDtoJsp request) throws MessagingException, IOException {
+        mailService.sendMailJsp(request.getMailType(), request.getReceiveMail(), request.getUserName(), request.getMeetRoom(), request.getMeetTime(), request.getMeetTitle(), request.getMeetContent());
         return ResponseEntity.ok(200);
     }
 }
