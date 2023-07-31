@@ -17,5 +17,5 @@
 //   yearSuffix: '년'
 // });
 
-alert("gkgkgkgk");
-console.log("wwwww");
+alert("해당 컨텐츠의 js");
+console.log("해당 컨텐츠의 js");

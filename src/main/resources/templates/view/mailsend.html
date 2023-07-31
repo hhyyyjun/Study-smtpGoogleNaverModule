@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="layout/default_layout">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default_layout}">
 
 <!-- 현재 화면에서만 사용하는 css -->
 <th:block layout:fragment="css">
-    <link rel="stylesheet" th:href="@{/css/mail.css}">
+<link rel="stylesheet" th:href="@{/css/mail.css}">
 </th:block>
 
 <!-- 현재 화면에서만 사용하는 js -->
-<!--<th:block layout:fragment="script">-->
-<!--    <script src="/js/mail.js"></script>-->
-<!--</th:block>-->
+<th:block layout:fragment="script">
+<script th:src="@{/js/mail.js}"></script>
+</th:block>
 
 <body>
     <th:block layout:fragment="content">

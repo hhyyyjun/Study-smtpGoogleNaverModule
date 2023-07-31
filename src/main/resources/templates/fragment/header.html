@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+<!-- Thymeleaf 선언 / headerFragment 임을 선언-->
 <html xmlns:th="http://www.thymeleaf.org">
-<header th:fragment="headerFragment">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modernize Free</title>
-</header>
+<th:block th:fragment="headerFragment">
+    <div class="mailHeader">
+        <h1>Header 영역입니다.</h1>
+    </div>
+</th:block>
+</html>

@@ -38,14 +38,14 @@ public class mailController {
         return "view/mailsend";
     }
 
-    @PostMapping("/sendMail")
+    @PostMapping("/sendMailWithThymeleaf")
     @ResponseBody
     public ResponseEntity<?> sendMail(@RequestBody MailDto request) throws MessagingException, IOException {
         mailService.sendEmailThymeleaf(request.getMailType(), request.getUserEmail(), request.getUserName(), request.getSelectDate());
         return ResponseEntity.ok(200);
     }
 
-    @PostMapping("/sendEmailToPeople")
+    @PostMapping("/sendEmailWithJsp")
     public ResponseEntity<?> mailToPeople(@RequestBody MailDtoJsp request) throws MessagingException, IOException {
         mailService.sendMailJsp(request.getMailType(), request.getReceiveMail(), request.getUserName(), request.getMeetRoom(), request.getMeetTime(), request.getMeetTitle(), request.getMeetContent());
         return ResponseEntity.ok(200);
