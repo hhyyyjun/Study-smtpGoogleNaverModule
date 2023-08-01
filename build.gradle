@@ -37,6 +37,9 @@ dependencies {
 
 	//transactional 사용하기 위해 import
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	//jQuery 추가
+	implementation 'org.webjars:jquery:3.6.0'
 }
 
 tasks.named('test') {

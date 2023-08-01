@@ -23,7 +23,11 @@ public class MailDtoJsp {
     private List<String> receiveMail; //초대할 인원 이메일
     private List<String> userName; //초대할 인원 이름
     private Long meetRoom; //회의실 번호
-    private LocalDateTime meetTime; //회의 시간, 날짜
+//    private LocalDateTime meetTime; //회의 시간, 날짜
+    private String meetDate; //회의 날짜
+    private String startTime; //회의 시작시간
+    private String endTime; //회의 종료시간
     private String meetTitle; //회의 제목
     private String meetContent; //회의 내용
+    
 }

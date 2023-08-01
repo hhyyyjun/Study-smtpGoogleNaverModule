@@ -46,8 +46,10 @@ public class mailController {
     }
 
     @PostMapping("/sendEmailWithJsp")
-    public ResponseEntity<?> mailToPeople(@RequestBody MailDtoJsp request) throws MessagingException, IOException {
-        mailService.sendMailJsp(request.getMailType(), request.getReceiveMail(), request.getUserName(), request.getMeetRoom(), request.getMeetTime(), request.getMeetTitle(), request.getMeetContent());
+    @ResponseBody
+    public ResponseEntity<?> mailToPeople(@RequestBody MailDtoJsp request) {
+//        mailService.sendMailJspWithPostMan(request.getMailType(), request.getReceiveMail(), request.getUserName(), request.getMeetRoom(), request.getMeetTime(), request.getMeetTitle(), request.getMeetContent());
+        mailService.sendMailJsp(request.getMailType(), request.getReceiveMail(), request.getMeetRoom(), request.getMeetDate(), request.getStartTime(), request.getEndTime(), request.getMeetTitle(), request.getMeetContent());
         return ResponseEntity.ok(200);
     }
 }

@@ -19,25 +19,34 @@
         <div class="emailWrap">
             <div class="emailSetting">
                 <div class="selectOptions">
-                    <select>
+                    <select class="meetRoom">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <select class="selectOption">
                         <option value="reservation">예약</option>
                         <option value="reservationChange">변경</option>
                         <option value="reservationDelete">삭제</option>
                     </select>
-                    <input class="datepicker">
+                    <input id="datepicker" placeholder="날짜 선택">
+                    <input class="timepicker startTime" type="text" placeholder="시작시간">
+                    <input class="timepicker endTime" type="text" placeholder="종료시간">
                 </div>
                 <div class="selectUser">
                     <input class="userEmail" type="text" placeholder="추가할 사람의 이메일을 입력하세요.">
-                    <button class="addBtn">추가</button>
+                    <button id="addBtn">추가</button>
                 </div>
             </div>
             <div class="selectUserList">
                 <ul class="selectedUserList"></ul>
             </div>
             <div>
+                <input class="meetTitle" type="text" placeholder="제목을 입력하세요." >
                 <textarea class="meetContent" placeholder="회의 내용을 입력하세요."></textarea>
             </div>
-            <button>예약하기</button>
+            <button id="reservate">예약하기</button>
         </div>
     </th:block>
 </body>

@@ -7,34 +7,95 @@
 .emailSetting{
     width: 100%;
 }
-
+/*옵션바*/
 .selectOptions{
-    width: 10%;
+    width: 100%;
     display: flex;
 }
+.selectOption, .meetRoom{
+    width: 10%;
+    text-align: center;
+}
 
+/*유저 추가*/
 .selectUser{
     width: 100%;
     display: flex;
 }
-
+/*입력된 유저 이메일*/
 .userEmail{
     width: 90%;
 }
 
-.addBtn{
+#addBtn{
     width: 10%;
 }
 
+/*추가된 유저 리스트*/
+.selectUserList{
+    width: 100%;
+    min-height: 20px;
+    border-block: 1px solid black;
+}
+.selectedUserList{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 5px;
+    margin-block: 5px;
+    overflow: auto;
+}
+.selectedUserList::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.selectedUserList::-webkit-scrollbar-thumb {
+    background-color: #B0B0B0;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.selectedUserList::-webkit-scrollbar-track {
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 3px white;
+}
+.userEmails{
+    list-style: none;
+    background-color: #D5D5D5;
+    font-size: 12px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 5px;
+    height: 20px;
+    padding: 0 10px 0 20px;
+}
+.userEmails span{
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 50%;
+    margin-left: 7px;
+}
+/*회의 제목*/
+.meetTitle{
+    width: 99%;
+    height: 30px;
+    border: none;
+}
+/*회의내용*/
 .meetContent{
     min-width: 99%;
     max-width: 99%;
     min-height: 500px;
 }
 
-.selectUserList{
-    width: 100%;
-    min-height: 20px;
-    flex: flex-wrap;
-    border-block: 1px solid black;
+/*데이트 피커*/
+#datepicker{
+    width: 32%;
+    text-align: center;
+}
+/*타임피커*/
+.timepicker{
+    width: 24%;
+    text-align: center;
 }
