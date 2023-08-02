@@ -13,7 +13,6 @@ $(function(){
      });
 
     let userEmails = []; //유저의 이메일을 담을 배열
-    let userEmailsIndex = 0;
 
     /*사람 추가*/
     $('#addBtn').on("click", function() {
@@ -24,11 +23,9 @@ $(function(){
             alert("이미 추가한 유저입니다.");
             return;
         }else if(emailRegex.test(userEmail)){ //정규표현식 조건에 부합한 경우
-            $(".selectedUserList").append("<li class='userEmails' data-userIndex=" + userEmailsIndex + ">" + userEmail + "<span class='removeUser'>ⓧ</span>" + "</li>");
+            $(".selectedUserList").append("<li class='userEmails' data-userEmail=" + userEmail + ">" + userEmail + "<span class='removeUser'>ⓧ</span>" + "</li>");
             userEmails.push(userEmail);
             $(".userEmail").val("");
-            console.log(userEmailsIndex);
-            userEmailsIndex++;
         }else{ //정규표현식 조건에 부합하지 않은 경우
             alert("이메일 형식이 아닙니다.");
         }
@@ -68,27 +65,31 @@ $(function(){
             contentType : "application/json; charset=UTF-8",
             success: function(){
                 console.log("성공");
+                alert("이메일을 성공적으로 전송하였습니다.");
             },
             error: function(){
                 console.log("실패");
+                alert("이메일을 전송에 실패하였습니다.");
             }
         })
         console.log(param);
     })
 
- })
     //유저 목록에서 유저 삭제
-$('.removeUser').click(function(){
-    alert("아아아안녕?");
-//        console.log(target);
-//        let findParent = $(target).parent();
-//        console.log(findParent);
-//        let targetIndex = parseInt(findParent.data("userIndex"));
-//        console.log(targetIndex);
-//        userEmails.splice(targetIndex, 1);
-//        console.log(userEmails);
-//    findParent.remove();
-})
+    $(".selectedUserList").on("click", ".removeUser", function() {
+        let findParent = $(this).parent(); //클릭한 요소의 부모요소
+        console.log(findParent);
+        let targetEmail = findParent.data("useremail"); //부모요소(추가한 유저)의 속성에 담긴 이메일 값
+        console.log(targetEmail);
+
+        let removeEmail = userEmails.indexOf(targetEmail);
+        if(removeEmail !== -1){
+            userEmails.splice(removeEmail, 1);
+        }
+        console.log(userEmails);
+        findParent.remove();
+    });
+ })
 
  $.datepicker.setDefaults({
    dateFormat: 'yy-mm-dd',
