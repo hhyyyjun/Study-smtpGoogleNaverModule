@@ -13,8 +13,8 @@ spring:
     #네이버로 보내는 경우
 #    host: smtp.naver.com
 #    port: 465
-#    username: gidwns617
-#    password: 65BB4KPHR4QR
+#    username: 네이버 아이디
+#    password: 네이버 smtp 비밀번호
 #    protocol: smtps
 #    properties:
 #      mail:
@@ -29,8 +29,8 @@ spring:
     #구글로 보내는 경우
     host: smtp.gmail.com
     port: 587
-    username: gidwns617@gmail.com
-    password: ixpalzctwwoneucc
+    username: #구글계정
+    password: #보안2단계 강화하면 나오는 비밀번호
     properties:
       mail:
         smtp:
